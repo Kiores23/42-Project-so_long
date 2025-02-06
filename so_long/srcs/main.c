@@ -16,7 +16,6 @@ int	main(int argc, char *argv[])
 {
 	char	**map;
 	char	**map_cpy;
-	int		i;
 
 	map = 0;
 	if (argc == 1)
@@ -26,7 +25,6 @@ int	main(int argc, char *argv[])
 		map_cpy = create_map(argv[1]);
 	if (!map || !map_cpy)
 		return (free_map(NULL, NULL));
-	i = -1;
 	if (!verif_map(map_cpy))
 		return (free_map(map, map_cpy));
 	free_map(NULL, map_cpy);
