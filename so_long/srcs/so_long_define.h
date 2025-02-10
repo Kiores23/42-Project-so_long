@@ -52,15 +52,25 @@ typedef struct s_game {
 	t_img	vd;
 }			t_game;
 
+#ifdef __linux__   // For Linux
+	#define K_ESC 65307
+	#define K_W 119
+	#define K_A 97
+	#define K_S 115
+	#define K_D 100
+#elif __APPLE__     // For macOS
+	#define K_ESC 53
+	#define K_W 13
+	#define K_A 0
+	#define K_S 1
+	#define K_D 2
+#endif
+
 enum {
 	ON_KEYDOWN = 2,
-	ON_DESTROY = 17,
-	K_ESC = 65307,  // ESC sous Linux
-	K_W = 119,      // 'w'
-	K_A = 97,       // 'a'
-	K_S = 115,      // 's'
-	K_D = 100       // 'd'
+	ON_DESTROY = 17
 };
+
 
 
 #endif
